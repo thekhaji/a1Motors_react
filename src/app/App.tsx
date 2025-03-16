@@ -2,19 +2,40 @@ import React from 'react';
 
 import '../css/app.css';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
+import { Link, Route, Switch } from 'react-router-dom';
+import { About } from './screens/About';
+import { Users } from './screens/Users';
+import { Home } from './screens/Home';
 
 function App() {
   return (
-    <Container maxWidth="sm"> 
-      <Stack flexDirection={"column"}>
-        <Box sx={{my: 4}}>
-          <Typography variant="h4" component={"h4"}>
-            Create Something
-          </Typography>
-        </Box>
-        <Button variant="contained">Contained</Button>
-      </Stack>
-    </Container>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+
+          <Switch>
+            <Route path="/about">
+              <About/>
+            </Route>
+            <Route path="/users">
+              <Users/>
+            </Route>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
+        </nav>
+      </div>
   );
 }
 

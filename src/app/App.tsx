@@ -8,25 +8,13 @@ import { Home } from './screens/homePage';
 import { CarsPage } from './screens/carsPage';
 import { OrdersPage } from './screens/ordersPage';
 import { UserPage } from './screens/userPage';
+import { HomeNavbar } from './components/headers';
+import { Footer } from './components/footers';
 
 function App() {
   return (
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/cars">Cars</Link>
-            </li>
-            <li>
-              <Link to="/orders">Orders</Link>
-            </li>
-            <li>
-              <Link to="/member-page">User</Link>
-            </li>
-          </ul>
+      <>
+        <HomeNavbar/>
           <Switch>
             <Route path="/cars">
               <CarsPage/>
@@ -41,8 +29,8 @@ function App() {
               <Home/>
             </Route>
           </Switch>
-        </nav>
-      </div>
+        <Footer/>
+      </>
   );
 }
 

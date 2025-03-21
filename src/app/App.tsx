@@ -1,15 +1,17 @@
 import React from 'react';
-
-import '../css/app.css';
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { Link, Route, Switch } from 'react-router-dom';
-
 import { Home } from './screens/homePage';
 import { CarsPage } from './screens/carsPage';
 import { OrdersPage } from './screens/ordersPage';
 import { UserPage } from './screens/userPage';
 import { HomeNavbar } from './components/headers';
 import { Footer } from './components/footers';
+import { HelpPage } from './screens/helpPage';
+import '../css/app.css';
+import '../css/navbar.css';
+
+
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
             </Route>
             <Route path="/member-page">
               <UserPage/>
+            </Route>
+            <Route path="/help-page">
+              <HelpPage/>
             </Route>
             <Route path="/">
               <Home/>

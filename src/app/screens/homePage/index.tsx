@@ -1,5 +1,33 @@
-import { Container } from "@mui/material";
+import { Box, Button, Container, Stack } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 export function Home(){
-    return <Container>Home Page</Container>;
+    return <div className={"top"}>
+        <Container className={"top-content"}>
+            <Stack className={"top-content-left"}>
+                <Box className={"top-info"}>
+                    <Box className={"top-info-first"}><h1>DRIVE YOUR</h1></Box>
+                    <Box className={"top-info-second"}><h1>DREAM</h1><span>Unlock Your Journey with US</span></Box>
+                </Box>
+                <Box className={"divider"}>
+                </Box>
+                <Box  className={"find-car"}>
+                    <NavLink to={"/cars"}>
+                        <Button variant="contained" className={"find-button"} >FIND YOUR CAR</Button>
+                    </NavLink>
+                </Box>
+                
+            </Stack>
+            <Stack className={"top-content-right"}>
+                <Box className={"right-content"}>
+                    <img src="/img/hero.png" alt="" />
+                </Box>
+            </Stack>
+        </Container>
+        <Container className={"custom-order"}>
+            <Stack className={""}>
+                
+            </Stack>
+        </Container>
+    </div>;
 }

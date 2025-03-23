@@ -2,7 +2,7 @@ import { Box, Button, Container, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
 export function HomeNavbar(){
-    const authMember = null;
+    const authMember = true;
     return <div className={"navbar"}>
         <Stack className={"navbar-inner"}>
             <Box className={"navbar-brand"}>
@@ -10,7 +10,7 @@ export function HomeNavbar(){
             </Box>
             <Stack className={"navbar-navlinks"}>
                 <Box className={"hover-line"}>
-                    <NavLink to="/" activeClassName={"underline"}>Home</NavLink>
+                    <NavLink to="/" exact activeClassName={"underline"}>Home</NavLink>
                 </Box>
                 <Box className={"hover-line"}>
                     <NavLink to="/cars" activeClassName={"underline"}>Cars</NavLink>
@@ -32,9 +32,13 @@ export function HomeNavbar(){
                 </Box>
                 {   !authMember ? (
                     <Box>
-                        <Button variant="contained" style={{backgroundColor: "#3776CC", color: "#f8f8ff"}}>Login</Button>
+                        <Button variant="contained" className={"login-button"} >Login</Button>
                     </Box>
-                    ) : (<img/>)
+                    ) : (<img
+                            className={"user-img"}
+                            src="/icons/default-user.svg"
+                            aria-haspopup={"true"}
+                        />)
                 }
             </Stack>
         </Stack>

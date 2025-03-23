@@ -11,6 +11,7 @@ import { HelpPage } from './screens/helpPage';
 import '../css/app.css';
 import '../css/navbar.css';
 import '../css/home.css';
+import '../css/customOrder.css';
 
 
 
